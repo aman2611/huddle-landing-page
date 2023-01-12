@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ROOT STYLES */
+
+:root {
+    /* Colors */
+
+    --clr-primary-100: #fff;
+    --clr-primary-200: hsl(300, 69%, 71%);
+    --clr-primary-400: hsl(257, 40%, 49%);
+
+    /* Font Families */
+
+    --ff-heading: 'Poppins', sans-serif;
+    --ff-body: 'Open Sans', sans-serif;
+
+    /* Font Weights */
+
+    --fw-regular: 400;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+    /* Font Sizes */
+
+    --fs-xsmall: 0.5rem;
+    --fs-small: 0.75rem;
+    --fs-normal: 1rem;
+    --fs-large: 1.1rem;
+    --fs-xlarge: 1.5rem;
+    --fs-xxlarge: 1.75rem;
+    --fs-huge: 2.5rem;
+}
+
+
+
+/* GENERAL STYLING */
+
+body {
+    height: 100vh;
+    background: url(images/bg-desktop.svg), var(--clr-primary-400);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-origin: content-box;
+    padding: 3rem;
+}
+
+
+
+
+/* Landing Main */
+.landing-main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 3rem;
+}
+
+
+/* Text same color in main content area */
+.landing-main__content {
+    margin-top: 2rem;
+    color: var(--clr-primary-100);
+}
+
+/* Same font family (Poppins) for Main Heading and Button */
+.main-heading,
+.btn {
+    font-family: var(--ff-heading);
+}
+
+/* Same font family (Open Sans) for Text and Attribution */
+.main-text,
+.attribution-container p {
+    font-family: var(--ff-body);
+}
+
+/* Heading and Text */
+.main-heading {
+    font-weight: var(--fw-semibold);
+    font-size: var(--fs-huge);
+}
+.main-text {
+    font-size: var(--fs-large);
+    margin: 1.5rem 0;
+    line-height: 1.5;
+}
+
+/* Buttons */
+.btn {
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 1.5rem;
+    width: 12rem;
+    font-size: var(--fs-large);
+    color: var(--clr-primary-400);
+    box-shadow: 4px 6px 20px rgb(31, 31, 31);
+    transition: .2s ease;
+}
+.socials-btn {
+    height: 2.5rem;
+    width: 2.5rem;
+    border: 1px solid var(--clr-primary-100);
+    border-radius: 50%;
+    font-size: var(--fs-large);
+    color: var(--clr-primary-100);
+    background-color: transparent;
+    transition: .2s ease;
+}
+
+
+
+/* Footer */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-bottom: 2rem; */
+}
+.footer-left,
+.footer-right {
+    position: absolute;
+    bottom: 2rem;
+}
+
+.footer-right {
+    right: 2rem;
+    display: flex;
+    gap: 1rem
+}
+
+
+
+/* Hover/Active States */
+.btn:hover {
+    background-color: var(--clr-primary-200);
+    color: var(--clr-primary-100);
+}
+.btn:active {
+    box-shadow: none;
+}
+
+.socials-btn:hover {
+    color: var(--clr-primary-200);
+    border-color: var(--clr-primary-200);
+}
+.socials-btn:active {
+    background-color: var(--clr-primary-100);
+}
+
+
+
+/* Attribution */
+.attribution-container {
+    position: absolute;
+    bottom: 7rem;
+    left: 8rem;
+    background-color: var(--clr-primary-100);
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+/* Hidden class for Attribution */
+
+.hidden {
+    display: none;
+}
+
+.attribution-container a {
+    text-decoration: none;
+}
+
+
+
+/* Media Query */
+
+@media (max-width: 450px) {
+
+    /* General Styling */
+    body {
+        min-height: 100vh;
+        background: url(images/bg-mobile.svg), var(--clr-primary-400);
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding: 2.5rem 1.8rem;
+        text-align: center;
+    }
+
+    /* Header and Logo */
+    header {
+        display: flex;
+        margin-bottom: 2rem;
+    }
+
+    .huddle-logo {
+        width: 10rem;
+    }
+
+    /* Main Content */
+    .landing-main {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .landing-main__img-container {
+        width: 100%;
+    }
+
+    .main-img {
+        width: 100%;
+    }
+
+    .main-heading {
+        font-size: var(--fs-xxlarge);
+        line-height: 1.6;
+    }
+
+    /* Buttons */
+    .btn {
+        width: 70%;
+        padding: .4rem;
+        font-size: var(--fs-normal);
+    }
+    .attribution-btn {
+        width: 50%;
+    }
+
+
+    /* Footer and Attribution */
+    footer {
+        flex-direction: column-reverse;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .footer-left {
+        width: 100%;
+    }
+
+    .footer-left,
+    .footer-right {
+        position: static;
+    }
+
+    .attribution-container {
+        bottom: 5rem;
+        left: 1rem;
+        right: 0;
+        width: 90%;
+    }
+}
